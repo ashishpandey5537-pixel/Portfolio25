@@ -1,1 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashish Pandey | Digital Marketing & SEO Executive</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-color: #2c3e50; /* Dark Blue/Grey */
+            --accent-color: #3498db; /* Professional Blue */
+            --text-color: #333333;
+            --light-text: #666666;
+            --bg-color: #ffffff;
+            --section-bg: #ffffff;
+            --border-color: #e0e0e0;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* --- LAYOUT UTILITIES --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: 700;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            margin: 10px auto 0;
+        }
+
+        /* --- HEADER / NAVIGATION --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-top: 80px; /* Offset for fixed header */
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+        }
+
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .hero-text h3 {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-img {
+            flex: 0 0 300px;
+            height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Placeholder background if image is missing */
+            background-color: #eee; 
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .social-icons {
+            margin-top: 25px;
+        }
+
+        .social-icons a {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-right: 20px;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+
+        /* --- SKILLS SECTION --- */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill-tag {
+            background: #f8f9fa;
+            border: 1px solid var(--border-color);
+            color: var(--primary-color);
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* --- EXPERIENCE SECTION --- */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background: var(--border-color);
+            top: 0;
+            bottom: 0;
+            left: 20px;
+            margin-left: -1px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+            padding-left: 50px;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            right: auto;
+            left: 12px;
+            top: 5px;
+            background-color: var(--bg-color);
+            border: 3px solid var(--accent-color);
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .job-card {
+            background: #fff;
+            border: 1px solid #f0f0f0;
+            padding: 25px;
+            border-radius: 8px;
+            transition: box-shadow 0.3s;
+        }
+
+        .job-card:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .job-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .company {
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        .date {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .job-desc li {
+            list-style: disc;
+            margin-left: 20px;
+            margin-bottom: 8px;
+            color: var(--light-text);
+            font-size: 0.95rem;
+        }
+
+        /* --- PORTFOLIO / PROJECTS --- */
+        .project-card {
+            background: #fdfdfd;
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .project-card h3 {
+            margin-bottom: 15px;
+        }
+
+        .project-card a {
+            color: var(--accent-color);
+            font-weight: 600;
+            text-decoration: underline;
+        }
+
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .activity-card {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        /* --- EDUCATION & CERTIFICATIONS --- */
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .edu-card, .cert-card {
+            padding: 20px;
+            border-left: 3px solid var(--accent-color);
+            background: #fafafa;
+        }
+
+        .edu-card h3, .cert-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .cert-container {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .cert-item {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .cert-item i {
+            color: var(--accent-color);
+        }
+
+        /* --- CONTACT --- */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item i {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .contact-item span {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .contact-item a {
+            color: var(--light-text);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 50px;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .hero-text h1 { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for single file: hidden on mobile */
+            .hero-content { text-align: center; }
+            .timeline::after { left: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">ASHISH PANDEY</div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Ashish Pandey</h1>
+                    <h3>Sr. Digital Marketing & SEO Executive</h3>
+                    <p>
+                        Results-driven professional with a proven track record of boosting online visibility, 
+                        driving organic traffic, and optimizing digital campaigns for maximum ROI. 
+                        Leveraging expertise in SEO, content strategy, and performance marketing to help businesses grow.
+                    </p>
+                    <a href="#contact" class="btn">Get In Touch</a>
+                    
+                    <div class="social-icons">
+                        <a href="mailto:ashishpandey5537@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                        <!-- Add your LinkedIn URL below inside href="" -->
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="hero-img">
+                    <!-- REPLACE 'profile.jpg' WITH YOUR ACTUAL IMAGE FILENAME -->
+                    <img src="profile.jpg" alt="Ashish Pandey">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Digital Marketing</div>
+                <div class="skill-tag">SEO (On-Page & Off-Page)</div>
+                <div class="skill-tag">Social Media Management</div>
+                <div class="skill-tag">SMO & SEM</div>
+                <div class="skill-tag">Content Creation</div>
+                <div class="skill-tag">Data Analysis</div>
+                <div class="skill-tag">Google Ads</div>
+                <div class="skill-tag">Canva Pro & Graphic Design</div>
+                <div class="skill-tag">Video Editing (Premiere Pro)</div>
+                <div class="skill-tag">E-commerce SEO</div>
+                <div class="skill-tag">Team Handling</div>
+                <div class="skill-tag">MS Office</div>
+                <div class="skill-tag">AI Tools & Strategy</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" style="background-color: #fafafa;">
+        <div class="container">
+            <h2>Professional Experience</h2>
+            <div class="timeline">
+                
+                <!-- Role 1 -->
+                <div class="timeline-item">
+                    <div class="job-card">
+                        <div class="job-title">Sr. Digital Marketing & SEO Executive</div>
+                        <div class="company">SmartSchool Education Pvt. Ltd.</div>
+                        <span class="date">May 2023 - Present</span>
+                        <ul class="job-desc">
+                            <li>Oversee Social Media Marketing (SMM) and Social Media Optimization (SMO) to enhance brand engagement.</li>
+                            <li>Conduct keyword research, content gap analysis, and competitor analysis to enhance search visibility.</li>
+                            <li>Analyze SERP trends and implement strategies to improve search presence.</li>
+                            <li>Develop and implement marketing strategies that support and drive business objectives.</li>
+                            <li>Create visually engaging graphics and content for digital marketing campaigns.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 2 -->
+                <div class="timeline-item">
+                    <div class="job-card">
+                        <div class="job-title">SEO Executive</div>
+                        <div class="company">SmartSchool Education Pvt. Ltd.</div>
+                        <span class="date">May 2023 - June 2024</span>
+                        <ul class="job-desc">
+                            <li>Develop and execute SEO strategies to improve search engine rankings and drive organic traffic.</li>
+                            <li>Optimize website performance through On-Page, Off-Page, and Technical SEO techniques.</li>
+                            <li>Create high-quality backlinks to improve website authority and search engine rankings.</li>
+                            <li>Write and submit guest posts on authoritative blogs to drive traffic and build quality links.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Role 3 -->
+                <div class="timeline-item">
+                    <div class="job-card">
+                        <div class="job-title">Customer Care Executive</div>
+                        <div class="company">Cyfuture India Pvt. Ltd.</div>
+                        <span class="date">Sep 2021 - Mar 2023</span>
+                        <ul class="job-desc">
+                            <li>Worked on the BSES Rajdhani process, handling customer queries via inbound, outbound, and chat channels.</li>
+                            <li>Provided real-time solutions to customers, ensuring satisfaction and efficient problem resolution.</li>
+                            <li>Monitored team performance and offered constructive feedback to improve quality and efficiency.</li>
+                            <li>Mentored and guided team members to ensure smooth workflow and high performance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO SECTION -->
+    <section id="portfolio">
+        <div class="container">
+            <h2>Web Portfolio & Activities</h2>
+            
+            <div class="project-card">
+                <h3><i class="fas fa-laptop-code"></i> Website Created</h3>
+                <p>Designed and managed website content and SEO strategy.</p>
+                <br>
+                <a href="https://scholarlysollution.online" target="_blank">scholarlysollution.online</a>
+            </div>
+
+            <h3 style="text-align: center; margin-bottom: 20px; color: var(--light-text);">Other Activities</h3>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <i class="fas fa-users" style="color: var(--accent-color); font-size: 2rem; margin-bottom: 10px;"></i>
+                    <h4>Public Relations</h4>
+                    <p>Managed Public Relations for the Company</p>
+                </div>
+                <div class="activity-card">
+                    <i class="fas fa-hand-holding-heart" style="color: var(--accent-color); font-size: 2rem; margin-bottom: 10px;"></i>
+                    <h4>CSR Management</h4>
+                    <p>Corporate Social Responsibility Management</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <section id="education" style="background-color: #fafafa;">
+        <div class="container">
+            <h2>Education & Certifications</h2>
+            
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <h3>Bachelor Of Commerce</h3>
+                    <div class="company">Global Institute Of Information And Technology</div>
+                    <span class="date">2020 – 2023</span>
+                </div>
+                <div class="edu-card">
+                    <h3>Intermediate</h3>
+                    <div class="company">Shanti International School</div>
+                    <span class="date">2018 – 2020</span>
+                </div>
+            </div>
+
+            <div class="cert-container">
+                <div class="cert-item"><i class="fas fa-certificate"></i> Digital Marketing Fundamentals</div>
+                <div class="cert-item"><i class="fas fa-certificate"></i> Artificial Intelligence</div>
+                <div class="cert-item"><i class="fas fa-certificate"></i> Digital Marketing Strategy</div>
+                <div class="cert-item"><i class="fas fa-certificate"></i> SEO Certification</div>
+                <div class="cert-item"><i class="fas fa-certificate"></i> Graphic Design Essentials</div>
+                <div class="cert-item"><i class="fas fa-certificate"></i> AI In The Classroom</div>
+                <div class="cert-item"><i class="fas fa-certificate"></i> Canva Essentials</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Phone</span>
+                    <a href="tel:+918376056223">+91 83760-56223</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                    <a href="mailto:ashishpandey5537@gmail.com">ashishpandey5537@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Location</span>
+                    <span>Sector 102, Noida, U.P, India</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Ashish Pandey. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
